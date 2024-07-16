@@ -1,0 +1,4 @@
+#忽略Vivado Project
+BitwiseMultiply_Vivado/
+#忽略实验结果
+*.txt

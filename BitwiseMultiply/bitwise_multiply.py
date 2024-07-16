@@ -26,14 +26,18 @@ def files_are_equal(file1, file2):
 
 result_file = 'result.txt'
 result_bitwise_file = 'result_bitwise.txt'
+flag = 0
 
 with open(result_bitwise_file, 'a') as file_bitwise, open(result_file, 'a') as file:
-    for a in range(256):
-        for b in range(256):
+    for a in range(10000): # 2^32 -1
+        for b in range(10000):
             result = a * b
             result_bitwise = bitwise_multiply(a, b)
             file.write(str(result)+'\n')
             file_bitwise.write(str(result_bitwise)+'\n')
+            flag += 1
+            print(flag, result, result_bitwise)
+                
 
 file.close()
 file_bitwise.close()
